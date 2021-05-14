@@ -1,0 +1,150 @@
+// Variables
+$mobile-width: 320px;
+
+$tablet-width: 768px;
+
+$desktop-width: 1440px;
+
+$grey-color: #010202;
+
+$dark-color: #7A6563;
+
+$cool-color: #7FD1B9; 
+
+$light-color: #ECE2D0;
+
+// Media
+@mixin media-tablet {
+    @media screen and (max-width: $tablet-width) {
+      @content;
+    }
+  }
+  
+  @mixin media-desktop {
+    @media screen and (min-width:$desktop-width) {
+      @content;
+    }
+  }
+  
+  @mixin media-custom($width) {
+    @media (min-width: $width) {
+      @content;
+    }
+  }
+
+  // Mixins
+  @mixin indent() {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @mixin flex() {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  @mixin list() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+// main
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+  
+.pokemon-list {
+    @include indent();
+    padding: 0 50px;
+    margin-bottom: 50px;
+    @include flex();
+    justify-content: space-evenly;
+    @include list();
+}
+
+.pokemon-card {
+    @include indent();
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 7px 3px $cool-color;
+    @include flex();
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 260px;
+    height: 260px;
+}
+
+.pokemon-card__caught {
+  box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-card__name {
+    text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include indent();
+    padding: 0.2em;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.pokemon-card__link {
+    border-radius: 20px;
+
+    &:hover img,
+    &:focus img {
+      transform: scale(1.3);
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+}
+
+.pokemon-card__img {
+    margin-bottom: 20px;
+}
+
+.pokemon-card__btn {
+    font-family: 'Space Mono', monospace;
+    border: 0;
+    box-shadow: 0 none;
+    color: #ffffff;
+    background-color: $cool-color;
+    text-transform: lowercase;
+    @include indent();
+    padding: 7px 14px;
+    border-radius: 5px;
+    letter-spacing: 3px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: $dark-color;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+
+    &:disabled {
+      background-color: $dark-color;
+      opacity: 0.5;
+    }
+}
