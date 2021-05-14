@@ -1,0 +1,34 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "Это последнее задание в курсе. Дедлайн - **17.05**!",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint src/**/*.js",
+    "test": "npm run eslint",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "@babel/core": "7.14.2",
+    "@babel/preset-env": "7.14.2",
+    "@babel/preset-react": "7.13.13",
+    "babel-loader": "8.2.2",
+    "eslint": "7.18.0",
+    "eslint-config-htmlacademy": "2.1.0",
+    "eslint-plugin-react": "7.22.0",
+    "webpack": "^5.0.0-rc.3",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Svetlana-Gubina/final-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Svetlana-Gubina/final-project/issues"
+  },
+  "homepage": "https://github.com/Svetlana-Gubina/final-project#readme"
+}
