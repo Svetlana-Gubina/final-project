@@ -2,11 +2,15 @@
   "pokemons": [
     {
       "name": "bulbasaur",
-      "id": 1
+      "id": 1,
+      "isCaught": true,
+      "captureDate": "2021-05-15T10:54:21.365Z"
     },
     {
       "name": "ivysaur",
-      "id": 2
+      "id": 2,
+      "isCaught": true,
+      "captureDate": "2021-05-15T10:56:46.988Z"
     },
     {
       "name": "venusaur",

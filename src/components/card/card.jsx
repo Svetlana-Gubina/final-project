@@ -61,7 +61,7 @@ const mapDispatchToProps = (dispatch) => ({
 Card.propTypes = {
   pokemonName: PropTypes.string,
   id: PropTypes.number,
-  // isCaught: PropTypes.bool,
+  isCaught: PropTypes.bool,
   caughtClass: PropTypes.string,
   onHandleCatch: PropTypes.func,
   hasCacthPokemonError: PropTypes.bool,

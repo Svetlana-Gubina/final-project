@@ -48,7 +48,7 @@ const mapStateToProps = (state) => ({
 });
 
 Caught.propTypes = {
-  caughtPokemons: PropTypes.string,
+  caughtPokemons: PropTypes.array,
 };
 
 export {Caught};

@@ -14,7 +14,7 @@ const PokemonList = (props) => {
         key={uuidv4()}
         pokemonName={p.name}
         id={p.id}
-        isCaught={p.isCaught || ``}
+        isCaught={p.isCaught || false}
         caughtClass={caughtClass} />)}
     </section>
   );
