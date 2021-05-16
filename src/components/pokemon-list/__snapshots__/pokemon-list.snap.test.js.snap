@@ -1,0 +1,349 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Pagination Should PokemonList render correctly 1`] = `
+<div>
+  <section
+    class="pokemon-list"
+  >
+    <h2
+      class="visually-hidden"
+    >
+      Pokemon list
+    </h2>
+    <div
+      class=" pokemon-card"
+    >
+      <a
+        class="pokemon-card__link"
+        href="/pokemon/1"
+      >
+        <img
+          alt="bulbasaur"
+          class="pokemon-card__img"
+          height="40"
+          src="img/1.png"
+          width="100"
+        />
+      </a>
+      <p
+        class="pokemon-card__name"
+      >
+        bulbasaur
+      </p>
+      <div
+        style="display: none; color: red;"
+      >
+        Sorry! Something went wrong! Please try again
+      </div>
+      <button
+        class="pokemon-card__btn"
+        type="button"
+      >
+        Catch
+      </button>
+    </div>
+    <div
+      class=" pokemon-card"
+    >
+      <a
+        class="pokemon-card__link"
+        href="/pokemon/2"
+      >
+        <img
+          alt="ivysaur"
+          class="pokemon-card__img"
+          height="40"
+          src="img/2.png"
+          width="100"
+        />
+      </a>
+      <p
+        class="pokemon-card__name"
+      >
+        ivysaur
+      </p>
+      <div
+        style="display: none; color: red;"
+      >
+        Sorry! Something went wrong! Please try again
+      </div>
+      <button
+        class="pokemon-card__btn"
+        type="button"
+      >
+        Catch
+      </button>
+    </div>
+    <div
+      class=" pokemon-card"
+    >
+      <a
+        class="pokemon-card__link"
+        href="/pokemon/3"
+      >
+        <img
+          alt="venusaur"
+          class="pokemon-card__img"
+          height="40"
+          src="img/3.png"
+          width="100"
+        />
+      </a>
+      <p
+        class="pokemon-card__name"
+      >
+        venusaur
+      </p>
+      <div
+        style="display: none; color: red;"
+      >
+        Sorry! Something went wrong! Please try again
+      </div>
+      <button
+        class="pokemon-card__btn"
+        type="button"
+      >
+        Catch
+      </button>
+    </div>
+    <div
+      class=" pokemon-card"
+    >
+      <a
+        class="pokemon-card__link"
+        href="/pokemon/4"
+      >
+        <img
+          alt="charmander"
+          class="pokemon-card__img"
+          height="40"
+          src="img/4.png"
+          width="100"
+        />
+      </a>
+      <p
+        class="pokemon-card__name"
+      >
+        charmander
+      </p>
+      <div
+        style="display: none; color: red;"
+      >
+        Sorry! Something went wrong! Please try again
+      </div>
+      <button
+        class="pokemon-card__btn"
+        type="button"
+      >
+        Catch
+      </button>
+    </div>
+    <div
+      class=" pokemon-card"
+    >
+      <a
+        class="pokemon-card__link"
+        href="/pokemon/5"
+      >
+        <img
+          alt="charmeleon"
+          class="pokemon-card__img"
+          height="40"
+          src="img/5.png"
+          width="100"
+        />
+      </a>
+      <p
+        class="pokemon-card__name"
+      >
+        charmeleon
+      </p>
+      <div
+        style="display: none; color: red;"
+      >
+        Sorry! Something went wrong! Please try again
+      </div>
+      <button
+        class="pokemon-card__btn"
+        type="button"
+      >
+        Catch
+      </button>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Test PokemonList Should PokemonList render correctly 1`] = `
+<div>
+  <section
+    class="pokemon-list"
+  >
+    <h2
+      class="visually-hidden"
+    >
+      Pokemon list
+    </h2>
+    <div
+      class=" pokemon-card"
+    >
+      <a
+        class="pokemon-card__link"
+        href="/pokemon/1"
+      >
+        <img
+          alt="bulbasaur"
+          class="pokemon-card__img"
+          height="40"
+          src="img/1.png"
+          width="100"
+        />
+      </a>
+      <p
+        class="pokemon-card__name"
+      >
+        bulbasaur
+      </p>
+      <div
+        style="display: none; color: red;"
+      >
+        Sorry! Something went wrong! Please try again
+      </div>
+      <button
+        class="pokemon-card__btn"
+        type="button"
+      >
+        Catch
+      </button>
+    </div>
+    <div
+      class=" pokemon-card"
+    >
+      <a
+        class="pokemon-card__link"
+        href="/pokemon/2"
+      >
+        <img
+          alt="ivysaur"
+          class="pokemon-card__img"
+          height="40"
+          src="img/2.png"
+          width="100"
+        />
+      </a>
+      <p
+        class="pokemon-card__name"
+      >
+        ivysaur
+      </p>
+      <div
+        style="display: none; color: red;"
+      >
+        Sorry! Something went wrong! Please try again
+      </div>
+      <button
+        class="pokemon-card__btn"
+        type="button"
+      >
+        Catch
+      </button>
+    </div>
+    <div
+      class=" pokemon-card"
+    >
+      <a
+        class="pokemon-card__link"
+        href="/pokemon/3"
+      >
+        <img
+          alt="venusaur"
+          class="pokemon-card__img"
+          height="40"
+          src="img/3.png"
+          width="100"
+        />
+      </a>
+      <p
+        class="pokemon-card__name"
+      >
+        venusaur
+      </p>
+      <div
+        style="display: none; color: red;"
+      >
+        Sorry! Something went wrong! Please try again
+      </div>
+      <button
+        class="pokemon-card__btn"
+        type="button"
+      >
+        Catch
+      </button>
+    </div>
+    <div
+      class=" pokemon-card"
+    >
+      <a
+        class="pokemon-card__link"
+        href="/pokemon/4"
+      >
+        <img
+          alt="charmander"
+          class="pokemon-card__img"
+          height="40"
+          src="img/4.png"
+          width="100"
+        />
+      </a>
+      <p
+        class="pokemon-card__name"
+      >
+        charmander
+      </p>
+      <div
+        style="display: none; color: red;"
+      >
+        Sorry! Something went wrong! Please try again
+      </div>
+      <button
+        class="pokemon-card__btn"
+        type="button"
+      >
+        Catch
+      </button>
+    </div>
+    <div
+      class=" pokemon-card"
+    >
+      <a
+        class="pokemon-card__link"
+        href="/pokemon/5"
+      >
+        <img
+          alt="charmeleon"
+          class="pokemon-card__img"
+          height="40"
+          src="img/5.png"
+          width="100"
+        />
+      </a>
+      <p
+        class="pokemon-card__name"
+      >
+        charmeleon
+      </p>
+      <div
+        style="display: none; color: red;"
+      >
+        Sorry! Something went wrong! Please try again
+      </div>
+      <button
+        class="pokemon-card__btn"
+        type="button"
+      >
+        Catch
+      </button>
+    </div>
+  </section>
+</div>
+`;
