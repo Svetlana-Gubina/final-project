@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should UserNav render correctly 1`] = `
+<div>
+  <a
+    class="header__nav-link"
+    href="/caught"
+  >
+    My pokemons
+  </a>
+</div>
+`;

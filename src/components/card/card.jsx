@@ -56,6 +56,9 @@ const mapDispatchToProps = (dispatch) => ({
   onHandleCatch(id) {
     dispatch(catchPokemon(id));
   },
+  // onLoadData() {
+  // dispatch(getPokemonsList());
+  // },
 });
 
 Card.propTypes = {

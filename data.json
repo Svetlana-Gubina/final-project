@@ -14,19 +14,27 @@
     },
     {
       "name": "venusaur",
-      "id": 3
+      "id": 3,
+      "isCaught": true,
+      "captureDate": "2021-05-16T13:17:54.893Z"
     },
     {
       "name": "charmander",
-      "id": 4
+      "id": 4,
+      "isCaught": true,
+      "captureDate": "2021-05-16T13:18:43.054Z"
     },
     {
       "name": "charmeleon",
-      "id": 5
+      "id": 5,
+      "isCaught": true,
+      "captureDate": "2021-05-16T13:19:55.934Z"
     },
     {
       "name": "charizard",
-      "id": 6
+      "id": 6,
+      "isCaught": true,
+      "captureDate": "2021-05-16T13:18:55.671Z"
     },
     {
       "name": "squirtle",
