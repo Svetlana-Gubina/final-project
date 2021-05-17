@@ -1,3 +1,9 @@
+### Start:
+
+* npm install -g json-server
+* json-server --watch data.json --port 3004
+* npm start
+
 # Final project
 
 Это последнее задание в курсе. Дедлайн - **17.05**!
