@@ -1,4 +1,4 @@
-import {ActionType, ActionCreator} from './action';
+import {ActionType, loadPokemons, setDataError, setCatchError} from './action';
 
 describe(`Action creators work correctly`, () => {
   it(`Action creator for loadPokemons should create an action with pokemons data`, () => {
@@ -28,46 +28,9 @@ describe(`Action creators work correctly`, () => {
       payload: pokemons
     };
 
-    expect(ActionCreator.loadPokemons(pokemons)).toEqual(expectedAction);
+    expect(loadPokemons(pokemons)).toEqual(expectedAction);
   });
 
-  it(`Action creator for getCaughtPokemons should create an action with caught pokemons`, () => {
-    const caughtPokemons = [
-      {
-        "name": `bulbasaur`,
-        "id": 1,
-        "isCaught": true,
-        "captureDate": `2021-05-15T10:54:21.365Z`
-      },
-      {
-        "name": `ivysaur`,
-        "id": 2,
-        "isCaught": true,
-        "captureDate": `2021-05-15T10:56:46.988Z`
-      }];
-
-    const expectedAction = {
-      type: ActionType.GET_CAUGHT_POKEMONS,
-      payload: caughtPokemons
-    };
-
-    expect(ActionCreator.getCaughtPokemons(caughtPokemons)).toEqual(expectedAction);
-  });
-
-  it(`Action creator for addPokemonToCaught should create an action with caught pokemon`, () => {
-    const pokemon = {
-      "name": `bulbasaur`,
-      "id": 1,
-      "isCaught": true,
-      "captureDate": `2021-05-15T10:54:21.365Z`
-    };
-    const expectedAction = {
-      type: ActionType.ADD_POKEMON_TO_CAUGHT,
-      payload: pokemon
-    };
-
-    expect(ActionCreator.addPokemonToCaught(pokemon)).toEqual(expectedAction);
-  });
 
   it(`Action creator for setDataError should create action with error status`, () => {
     const status = true;
@@ -76,7 +39,7 @@ describe(`Action creators work correctly`, () => {
       payload: status
     };
 
-    expect(ActionCreator.setDataError(status)).toEqual(expectedAction);
+    expect(setDataError(status)).toEqual(expectedAction);
   });
 
   it(`Action creator for setCatchError should create an action with error status`, () => {
@@ -86,6 +49,6 @@ describe(`Action creators work correctly`, () => {
       payload: status
     };
 
-    expect(ActionCreator.setCatchError(status)).toEqual(expectedAction);
+    expect(setCatchError(status)).toEqual(expectedAction);
   });
 });

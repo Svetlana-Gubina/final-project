@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import {api} from '../../api';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import PokemonList from '../pokemon-list/pokemon-list';
 import UserNav from '../user-nav/user-nav';
 import LoadingScreen from '../loading-screen/loading-screen';
@@ -10,20 +9,22 @@ import Pagination from '../pagination/pagination';
 import {getPokemonsList} from '../../store/api-actions';
 import {LIMIT} from '../../constants';
 
-const MainPage = (props) => {
-  const {pokemons, isDataLoaded, hasDataError, onLoadData} = props;
+const MainPage = () => {
+  const {pokemons} = useSelector((state) => state.DATA);
+  const {isDataLoaded} = useSelector((state) => state.DATA);
+  const {hasDataError} = useSelector((state) => state.DATA_ERROR);
   const [pageNumber, setPageNumber] = useState(1);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [isLastPage, setIsLastPage] = useState(false);
   const [pokemonsToRender, setPokemonsToRender] = useState([]);
 
-
+  const dispatch = useDispatch();
   useEffect(() => {
     if (!isDataLoaded) {
-      onLoadData();
+      dispatch(getPokemonsList());
     }
-  }, [isDataLoaded, onLoadData]);
+  }, [isDataLoaded]);
 
   useEffect(() => {
     setLoading(true);
@@ -91,26 +92,4 @@ const MainPage = (props) => {
   );
 };
 
-
-const mapStateToProps = ({DATA, DATA_ERROR}) => ({
-  pokemons: DATA.pokemons,
-  isDataLoaded: DATA.isDataLoaded,
-  hasDataError: DATA_ERROR.hasDataError
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  onLoadData() {
-    dispatch(getPokemonsList());
-  },
-});
-
-MainPage.propTypes = {
-  pokemons: PropTypes.array,
-  isDataLoaded: PropTypes.bool,
-  hasDataError: PropTypes.bool,
-  onLoadData: PropTypes.func,
-};
-
-
-export {MainPage};
-export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
+export default MainPage;

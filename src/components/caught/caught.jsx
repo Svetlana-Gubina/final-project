@@ -1,13 +1,13 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import PokemonList from '../pokemon-list/pokemon-list';
 import UserNav from '../user-nav/user-nav';
+import {getCaughtPokemons} from '../../store/selectors';
 import './caught.scss';
 
-const Caught = (props) => {
-  const {caughtPokemons} = props;
+const Caught = () => {
+  const caughtPokemons = useSelector(getCaughtPokemons);
   const caughtClass = `pokemon-list__my_pokemons`;
 
 
@@ -32,7 +32,7 @@ const Caught = (props) => {
         <div className="wrapper__inner">
           <div className="pokemon-caught">
             <h2 className="pokemon-caught__title">My pokemons:</h2>
-            {caughtPokemons.length ? <PokemonList pokemons={caughtPokemons} caughtClass={caughtClass} /> : 
+            {caughtPokemons.length ? <PokemonList pokemons={caughtPokemons} caughtClass={caughtClass} /> :
               <div className="page-main__pokemon-empty">
                 You haven&apos;t caught any pokemon yet.
               </div>}
@@ -43,13 +43,4 @@ const Caught = (props) => {
   );
 };
 
-const mapStateToProps = ({CAUGHT}) => ({
-  caughtPokemons: CAUGHT.caughtPokemons
-});
-
-Caught.propTypes = {
-  caughtPokemons: PropTypes.array,
-};
-
-export {Caught};
-export default connect(mapStateToProps, null)(Caught);
+export default Caught;

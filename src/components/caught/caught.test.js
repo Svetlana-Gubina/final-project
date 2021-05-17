@@ -1,23 +1,21 @@
 import React from 'react';
-import {render} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import {Router} from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import {createMemoryHistory} from 'history';
 import * as reactRedux from 'react-redux';
-import PokemonList from './pokemon-list';
+import Caught from './caught';
 
-const mockStore = configureStore({});
-let history;
-let store;
-
-const pokemonsList = [
+const data = [
   {
     "name": `bulbasaur`,
     "id": 1
   },
   {
     "name": `ivysaur`,
-    "id": 2
+    "id": 2,
+    "isCaught": true,
+    "captureDate": `2021-05-17T14:44:37.084Z`
   },
   {
     "name": `venusaur`,
@@ -25,12 +23,19 @@ const pokemonsList = [
   },
   {
     "name": `charmander`,
-    "id": 4
+    "id": 4,
+    "isCaught": true,
+    "captureDate": `2021-05-17T14:45:14.301Z`
   },
   {
     "name": `charmeleon`,
     "id": 5
-  }];
+  },
+  {
+    "name": `charizard`,
+    "id": 6
+  },
+];
 
 jest.mock(`../../store/api-actions`, () => {
   return {
@@ -41,10 +46,12 @@ jest.mock(`../../store/api-actions`, () => {
     })
   };
 });
-describe(`Test PokemonList`, () => {
+
+describe(`Test Caught`, () => {
+
   const state = {
     DATA: {
-      pokemons: pokemonsList,
+      pokemons: data,
       isDataLoaded: true,
     },
     DATA_ERROR: {
@@ -54,20 +61,22 @@ describe(`Test PokemonList`, () => {
       hasCacthPokemonError: false
     }
   };
+  const mockStore = configureStore();
+  let store;
   beforeEach(() => {
-    history = createMemoryHistory();
     store = mockStore(state);
   });
-  it(`Should PokemonList render correctly`, () => {
-    const pokemons = pokemonsList;
-    const {container} = render(
+  it(`Render 'Caught' correctly`, () => {
+    const history = createMemoryHistory();
+
+    render(
         <reactRedux.Provider store={store}>
           <Router history={history}>
-            <PokemonList pokemons={pokemons} />
+            <Caught />
           </Router>
         </reactRedux.Provider>
     );
-    expect(container).toMatchSnapshot();
+
+    expect(screen.getByText(/ivysaur/i)).toBeInTheDocument();
   });
 });
-

@@ -1,16 +1,15 @@
 import React, {useEffect, useState} from 'react';
+import {useSelector} from 'react-redux';
 import {Link, useParams} from 'react-router-dom';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import UserNav from '../user-nav/user-nav';
 import LoadingScreen from '../loading-screen/loading-screen';
 import {getPokemonById} from '../../utils';
 import './pokemon.scss';
 
-const Pokemon = (props) => {
+const Pokemon = () => {
   let {id} = useParams();
-  const {pokemons} = props;
+  const {pokemons} = useSelector((state) => state.DATA);
   const [pokemon, setPokemon] = useState(null);
   let specialFooterClass = pokemon && pokemon.isCaught ? `pokemon__info-footer-caught` : ``;
 
@@ -76,14 +75,4 @@ const Pokemon = (props) => {
   );
 };
 
-
-const mapStateToProps = ({DATA}) => ({
-  pokemons: DATA.pokemons,
-});
-
-Pokemon.propTypes = {
-  pokemons: PropTypes.array,
-};
-
-export {Pokemon};
-export default connect(mapStateToProps, null)(Pokemon);
+export default Pokemon;

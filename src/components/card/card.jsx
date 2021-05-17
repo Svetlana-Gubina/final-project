@@ -1,11 +1,14 @@
 import React, {useRef, useEffect, useState} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {api} from '../../api';
 import {Link} from "react-router-dom";
-import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {catchPokemon} from '../../store/api-actions';
+import {getPokemonsList} from '../../store/api-actions';
+import {setCatchError} from '../../store/action';
 
 const Card = (props) => {
-  const {pokemonName, id, isCaught, caughtClass, onHandleCatch, hasCacthPokemonError} = props;
+  const {pokemonName, id, isCaught, caughtClass} = props;
+  const {hasCacthPokemonError} = useSelector((state) => state.CATCH_POKEMON_ERROR);
   const [captureStatus, setCaptureStatus] = useState(isCaught);
   let specialCardClass = captureStatus ? `pokemon-card__caught` : ``;
   const errorMessage = useRef();
@@ -16,10 +19,21 @@ const Card = (props) => {
     }
   }, [hasCacthPokemonError]);
 
-
+  const dispatch = useDispatch();
   const handlePokemonCatch = () => {
-    setCaptureStatus(!captureStatus);
-    onHandleCatch(id);
+    setCaptureStatus((prevState) => !prevState); // doesn't change
+
+    api.patch(`/pokemons/${id}`, {
+      isCaught: true,
+      captureDate: new Date(Date.now())
+    })
+      .then(() => {
+        dispatch(getPokemonsList());
+        dispatch(setCatchError(false));
+      })
+      .catch(() => {
+        dispatch(setCatchError(true));
+      });
   };
 
   return (
@@ -47,25 +61,12 @@ const Card = (props) => {
   );
 };
 
-
-const mapStateToProps = ({CATCH_POKEMON_ERROR}) => ({
-  hasCacthPokemonError: CATCH_POKEMON_ERROR.hasCacthPokemonError,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  onHandleCatch(id) {
-    dispatch(catchPokemon(id));
-  },
-});
-
 Card.propTypes = {
   pokemonName: PropTypes.string,
   id: PropTypes.number,
   isCaught: PropTypes.bool,
   caughtClass: PropTypes.string,
-  onHandleCatch: PropTypes.func,
-  hasCacthPokemonError: PropTypes.bool,
 };
 
-export {Card};
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+
+export default Card;

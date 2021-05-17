@@ -1,18 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import thunk from 'redux-thunk';
 import {api} from './api';
-import {createStore, applyMiddleware, compose} from 'redux';
+import {configureStore} from '@reduxjs/toolkit';
 import {Provider} from 'react-redux';
 import browserHistory from './browser-history';
 import {Router} from 'react-router-dom';
 import App from './components/app/app';
 import rootReducer from './store/root-reducer/root-reducer';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, composeEnhancers(
-    applyMiddleware(thunk.withExtraArgument(api)),
-));
+export const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      thunk: {
+        extraArgument: api
+      },
+    })
+});
 
 
 ReactDOM.render(

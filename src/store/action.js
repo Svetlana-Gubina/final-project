@@ -2,19 +2,13 @@ import {createAction} from '@reduxjs/toolkit';
 
 export const ActionType = {
   LOAD_POKEMONS: `store/loadPokemons`,
-  GET_CAUGHT_POKEMONS: `main/getCaughtPokemons`,
+  UPDATE_POKEMONS: `store/updatePokemons`,
   ADD_POKEMON_TO_CAUGHT: `main/addPokemonToCaught`,
   SET_DATA_ERROR: `main/setDataError`,
   SET_CATCH_POKEMON_ERROR: `card/setCatchPokemonError`
 };
 
 export const loadPokemons = createAction(ActionType.LOAD_POKEMONS, (data) => {
-  return {
-    payload: data,
-  };
-});
-
-export const getCaughtPokemons = createAction(ActionType.GET_CAUGHT_POKEMONS, (data) => {
   return {
     payload: data,
   };
@@ -37,4 +31,3 @@ export const setCatchError = createAction(ActionType.SET_CATCH_POKEMON_ERROR, (s
     payload: status,
   };
 });
-
