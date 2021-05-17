@@ -43,8 +43,8 @@ const Caught = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  caughtPokemons: state.caughtPokemons
+const mapStateToProps = ({CAUGHT}) => ({
+  caughtPokemons: CAUGHT.caughtPokemons
 });
 
 Caught.propTypes = {

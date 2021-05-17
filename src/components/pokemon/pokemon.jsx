@@ -77,8 +77,8 @@ const Pokemon = (props) => {
 };
 
 
-const mapStateToProps = (state) => ({
-  pokemons: state.pokemons,
+const mapStateToProps = ({DATA}) => ({
+  pokemons: DATA.pokemons,
 });
 
 Pokemon.propTypes = {

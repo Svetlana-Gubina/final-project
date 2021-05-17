@@ -1,14 +1,14 @@
-import {ActionCreator} from './action';
+import {loadPokemons, getCaughtPokemons, addPokemonToCaught, setDataError, setCatchError} from './action';
 
 export const getPokemonsList = () => (dispatch, _getState, api) => (
   api.get(`/pokemons`)
       .then((res) => {
-        dispatch(ActionCreator.loadPokemons(res.data));
-        dispatch(ActionCreator.getCaughtPokemons(res.data));
-        dispatch(ActionCreator.setDataError(false));
+        dispatch(loadPokemons(res.data));
+        dispatch(getCaughtPokemons(res.data));
+        dispatch(setDataError(false));
       })
       .catch(() => {
-        dispatch(ActionCreator.setDataError(true));
+        dispatch(setDataError(true));
       })
 );
 
@@ -18,10 +18,10 @@ export const catchPokemon = (id) => (dispatch, _getState, api) => (
     captureDate: new Date(Date.now())
   })
     .then((res) => {
-      dispatch(ActionCreator.addPokemonToCaught(res.data));
-      dispatch(ActionCreator.setCatchError(false));
+      dispatch(addPokemonToCaught(res.data));
+      dispatch(setCatchError(false));
     })
     .catch(() => {
-      dispatch(ActionCreator.setCatchError(true));
+      dispatch(setCatchError(true));
     })
 );

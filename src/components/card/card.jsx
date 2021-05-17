@@ -48,17 +48,14 @@ const Card = (props) => {
 };
 
 
-const mapStateToProps = (state) => ({
-  hasCacthPokemonError: state.hasCacthPokemonError,
+const mapStateToProps = ({CATCH_POKEMON_ERROR}) => ({
+  hasCacthPokemonError: CATCH_POKEMON_ERROR.hasCacthPokemonError,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   onHandleCatch(id) {
     dispatch(catchPokemon(id));
   },
-  // onLoadData() {
-  // dispatch(getPokemonsList());
-  // },
 });
 
 Card.propTypes = {

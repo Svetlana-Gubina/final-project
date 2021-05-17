@@ -92,10 +92,10 @@ const MainPage = (props) => {
 };
 
 
-const mapStateToProps = (state) => ({
-  pokemons: state.pokemons,
-  isDataLoaded: state.isDataLoaded,
-  hasDataError: state.hasDataError
+const mapStateToProps = ({DATA, DATA_ERROR}) => ({
+  pokemons: DATA.pokemons,
+  isDataLoaded: DATA.isDataLoaded,
+  hasDataError: DATA_ERROR.hasDataError
 });
 
 const mapDispatchToProps = (dispatch) => ({

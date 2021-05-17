@@ -1,3 +1,5 @@
+import {createAction} from '@reduxjs/toolkit';
+
 export const ActionType = {
   LOAD_POKEMONS: `store/loadPokemons`,
   GET_CAUGHT_POKEMONS: `main/getCaughtPokemons`,
@@ -6,25 +8,33 @@ export const ActionType = {
   SET_CATCH_POKEMON_ERROR: `card/setCatchPokemonError`
 };
 
-export const ActionCreator = {
-  loadPokemons: (data) => ({
-    type: ActionType.LOAD_POKEMONS,
+export const loadPokemons = createAction(ActionType.LOAD_POKEMONS, (data) => {
+  return {
     payload: data,
-  }),
-  getCaughtPokemons: (data) => ({
-    type: ActionType.GET_CAUGHT_POKEMONS,
+  };
+});
+
+export const getCaughtPokemons = createAction(ActionType.GET_CAUGHT_POKEMONS, (data) => {
+  return {
     payload: data,
-  }),
-  addPokemonToCaught: (pokemon) => ({
-    type: ActionType.ADD_POKEMON_TO_CAUGHT,
-    payload: pokemon
-  }),
-  setDataError: (status) => ({
-    type: ActionType.SET_DATA_ERROR,
-    payload: status
-  }),
-  setCatchError: (status) => ({
-    type: ActionType.SET_CATCH_POKEMON_ERROR,
-    payload: status
-  }),
-};
+  };
+});
+
+export const addPokemonToCaught = createAction(ActionType.ADD_POKEMON_TO_CAUGHT, (pokemon) => {
+  return {
+    payload: pokemon,
+  };
+});
+
+export const setDataError = createAction(ActionType.SET_DATA_ERROR, (status) => {
+  return {
+    payload: status,
+  };
+});
+
+export const setCatchError = createAction(ActionType.SET_CATCH_POKEMON_ERROR, (status) => {
+  return {
+    payload: status,
+  };
+});
+

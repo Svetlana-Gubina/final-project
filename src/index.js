@@ -7,10 +7,10 @@ import {Provider} from 'react-redux';
 import browserHistory from './browser-history';
 import {Router} from 'react-router-dom';
 import App from './components/app/app';
-import {reducer} from './store/reducer';
+import rootReducer from './store/root-reducer/root-reducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducer, composeEnhancers(
+const store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(thunk.withExtraArgument(api)),
 ));
 
