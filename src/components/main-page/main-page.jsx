@@ -36,7 +36,7 @@ const MainPage = () => {
         .catch(() => {
           setError(true);
         });
-  }, [pageNumber]);
+  }, [pageNumber, pokemons]);
 
   if (loading && !error) {
     return (
