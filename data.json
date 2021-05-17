@@ -1,124 +1,84 @@
 {
-  "pokemons": [
+  "pokemons":[
     {
       "name": "bulbasaur",
-      "id": 1,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.226Z"
+      "id": 1
     },
     {
       "name": "ivysaur",
-      "id": 2,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.227Z"
+      "id": 2
     },
     {
       "name": "venusaur",
-      "id": 3,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.227Z"
+      "id": 3
     },
     {
       "name": "charmander",
-      "id": 4,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.228Z"
+      "id": 4
     },
     {
       "name": "charmeleon",
-      "id": 5,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.228Z"
+      "id": 5
     },
     {
       "name": "charizard",
-      "id": 6,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.229Z"
+      "id": 6
     },
     {
       "name": "squirtle",
-      "id": 7,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.229Z"
+      "id": 7
     },
     {
       "name": "wartortle",
-      "id": 8,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.230Z"
+      "id": 8
     },
     {
       "name": "blastoise",
-      "id": 9,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.231Z"
+      "id": 9
     },
     {
       "name": "caterpie",
-      "id": 10,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.231Z"
+      "id": 10
     },
     {
       "name": "metapod",
-      "id": 11,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.232Z"
+      "id": 11
     },
     {
       "name": "butterfree",
-      "id": 12,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.232Z"
+      "id": 12
     },
     {
       "name": "weedle",
-      "id": 13,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.233Z"
+      "id": 13
     },
     {
       "name": "kakuna",
-      "id": 14,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.233Z"
+      "id": 14
     },
     {
       "name": "beedrill",
-      "id": 15,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.234Z"
+      "id": 15
     },
     {
       "name": "pidgey",
-      "id": 16,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.234Z"
+      "id": 16
     },
     {
       "name": "pidgeotto",
-      "id": 17,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:58.235Z"
+      "id": 17
     },
     {
       "name": "pidgeot",
-      "id": 18,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:57.987Z"
+      "id": 18
     },
     {
       "name": "rattata",
-      "id": 19,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:57.988Z"
+      "id": 19
     },
     {
       "name": "raticate",
-      "id": 20,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:37:57.989Z"
+      "id": 20
     },
     {
       "name": "spearow",
@@ -126,9 +86,7 @@
     },
     {
       "name": "fearow",
-      "id": 22,
-      "isCaught": true,
-      "captureDate": "2021-05-17T15:40:46.577Z"
+      "id": 22
     },
     {
       "name": "ekans",
